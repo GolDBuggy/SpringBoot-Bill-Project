@@ -39,7 +39,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity https) throws Exception{
         https.csrf().disable();
         https.authorizeRequests().antMatchers("/save","/login").permitAll().and()
-                .authorizeRequests().antMatchers("/").hasRole("MEMBER").and()
+                .authorizeRequests().antMatchers("/","/wallet/**").hasRole("MEMBER").and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         https.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
         return https.build();
