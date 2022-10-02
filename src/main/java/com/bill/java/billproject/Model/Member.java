@@ -38,9 +38,16 @@ public class Member {
     @Column(name = "passw")
     private String password;
 
+    @Column(name = "phone")
+    private String phone;
+
     @Column(name = "roles")
     private String roles;
 
     @Column(name = "register_date")
     private Date registerDate;
+
+    @OneToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

@@ -1,10 +1,12 @@
 package com.bill.java.billproject.Controller;
 
 import com.bill.java.billproject.Dto.LoginDto;
+import com.bill.java.billproject.Dto.RegisterDto;
 import com.bill.java.billproject.Model.Member;
 import com.bill.java.billproject.Service.JwtService;
 import com.bill.java.billproject.Service.MemberService;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,13 +23,11 @@ public class MemberController {
 
     private final MemberService memberService;
     private final AuthenticationManager authenticationManager;
-    private final BCryptPasswordEncoder encoder;
     private final JwtService jwtService;
 
     @PostMapping("/save")
-    public ResponseEntity<Member> save(@RequestBody Member member){
-        memberService.save(member);
-        return ResponseEntity.ok(member);
+    public ResponseEntity<RegisterDto> save(@RequestBody RegisterDto registerDto){
+        return ResponseEntity.ok(memberService.save(registerDto));
     }
 
     @PostMapping("/login")
