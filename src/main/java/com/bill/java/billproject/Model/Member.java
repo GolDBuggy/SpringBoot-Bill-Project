@@ -1,5 +1,6 @@
 package com.bill.java.billproject.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,4 +55,13 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Wallet> wallets;
+
+    @OneToMany(mappedBy = "member")
+    @JsonIgnore
+    private List<Invoice> invoices;
+
+
+    @OneToMany(mappedBy = "member")
+    @JsonIgnore
+    private List<Auction> auctions;
 }
