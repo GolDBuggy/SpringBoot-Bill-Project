@@ -3,6 +3,7 @@ package com.bill.java.billproject.Service;
 import com.bill.java.billproject.Dto.InvoiceDto;
 import com.bill.java.billproject.Model.Auction;
 import com.bill.java.billproject.Model.Invoice;
+import com.bill.java.billproject.Model.Wallet;
 import com.bill.java.billproject.Repo.InvoiceRepo;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;

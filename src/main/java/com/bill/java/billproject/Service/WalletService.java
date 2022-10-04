@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.security.Principal;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -22,4 +23,8 @@ public class WalletService {
         walletRepo.save(wallet);
     }
 
+
+    public void update(Wallet wallet) {
+        walletRepo.save(wallet);
+    }
 }

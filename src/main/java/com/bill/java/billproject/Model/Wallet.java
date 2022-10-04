@@ -27,7 +27,7 @@ public class Wallet {
     @Column(name = "cash")
     private BigDecimal cash;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "member_id")
     @JsonIgnore
     private Member member;

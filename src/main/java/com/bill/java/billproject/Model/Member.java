@@ -53,8 +53,8 @@ public class Member {
     @JoinColumn(name = "company_id")
     private Company company;
 
-    @OneToMany(mappedBy = "member")
-    private List<Wallet> wallets;
+    @OneToOne(mappedBy = "member")
+    private Wallet wallet;
 
     @OneToMany(mappedBy = "member")
     @JsonIgnore
